@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <div class="row gx-2">
-      <div class="col-5">
+      <div class="col-4">
         <div>
           <select class="form-select" aria-label="Default select example" id="file_selector" onchange="file_selected()">
             <option value="-1" selected disabled>選擇檔案</option>
@@ -38,10 +38,8 @@
           </label>
         </div>
         <div>
-          <button type="button" class="btn btn-secondary" data-bs-toggle="button" id="story_ch"
-            onclick="click_Ch()">中文</button>
-          <button type="button" class="btn btn-secondary" data-bs-toggle="button" id="story_en"
-            onclick="click_En()">英文</button>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="button" id="story_ch" onclick="click_Ch()">中文</button>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="button" id="story_en" onclick="click_En()">英文</button>
           <button type="button" class="btn btn-dark" id="story_check" onclick="click_Check()">確認</button>
         </div>
         <div class="card" style="margin-top:15px">
@@ -77,7 +75,7 @@
           </div>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <form>
           <div class="mb-3">
             <select class="form-select" aria-label="Default select example" id="select_1" onchange="select1_changed()">
@@ -88,6 +86,7 @@
               <option value="Veh">Veh</option>
               <option value="Wea">Wea</option>
               <option value="Gpe">Gpe</option>
+              <option value="Unk">Unk</option>
             </select>
             <select class="form-select" aria-label="Default select example" id="select_2" onchange="select2_changed()">
             </select>

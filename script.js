@@ -581,8 +581,9 @@ function file_selected() {
     taggings = [];
     temp_tag = [];
     refresh_tag_display();
-    refresh_args_display();
+    refresh_args_display();  
 }
+
 
 function file_searched(search_bar) {
     // console.log(search_bar.value)
@@ -599,7 +600,7 @@ function file_searched(search_bar) {
     }
 }
 
-function click_Check() {
+function click_Check(){
     let val = file_selector.value;
     display_story(stories_json[val].file_name, stories_json[val].file_content, flag);
     get_tagged_tags(stories_json[val].file_name);
@@ -814,7 +815,7 @@ function generate_file_list() {
 }
 
 // display story content at story display area
-function display_story(f_title, f_cont) {
+function display_story(f_title, f_cont, flag) {
     let title = document.getElementById('card_title');
     let content = document.getElementById('card_content');
 
@@ -822,10 +823,10 @@ function display_story(f_title, f_cont) {
     while (content.firstChild) {
         content.removeChild(content.firstChild);
     }
-    if (flag == 0) {
+    if (flag == 0){
         var tok_list = tokenization_ch(f_cont);
     }
-    else if (flag == 1) {
+    else if(flag == 1){
         var tok_list = tokenization_en(f_cont);
     }
 
@@ -837,7 +838,6 @@ function display_story(f_title, f_cont) {
     }
 }
 
-// split the story content
 function tokenization_ch(string) {
     let exp = new RegExp('([\u4e00-\u9fa5:：!！「」，。?？])');
     let ret_list = [];
@@ -860,11 +860,11 @@ function tokenization_en(string) {
     for (let tok = 0; tok < splited.length; tok++) {
         if (splited[tok].trim().length > 0) {
             ret_list.push(splited[tok].trim());
-
-            if (splited[tok + 1] == ',' || splited[tok + 1] == '!' || splited[tok + 1] == '.' || splited[tok + 1] == '?' || splited[tok + 1] == '"') {
+            
+            if(splited[tok + 1] == ',' || splited[tok + 1] == '!' || splited[tok + 1] == '.' || splited[tok + 1] == '?' || splited[tok + 1] == '"'){
                 continue;
             }
-            else {
+            else{
                 ret_list.push(" ");
             }
         }
@@ -892,7 +892,7 @@ function login_or_register() {
 login_or_register();
 get_story_data();
 
-function click_Ch() {
+function click_Ch(){
     flag = 0;
     var x = document.getElementById('story_ch');
     var y = document.getElementById('story_en');
@@ -902,7 +902,7 @@ function click_Ch() {
 
 }
 
-function click_En() {
+function click_En(){
     flag = 1;
 
     var x = document.getElementById('story_ch');
@@ -913,8 +913,8 @@ function click_En() {
 }
 
 var ERE_menu1 = {
-    "Entity": ["Per", "Org", "Loc", "Fac", "Veh", "Wea", "Gpe"],
-    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)", "Coreference"],
+    "Entity": ["Per", "Org", "Loc", "Fac", "Veh", "Wea", "Gpe", "Unk"],
+    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)"],
     "Event": ["Life", "Movement", "Transaction", "Business", "Conflict", "Contact", "Personnel", "Justice"]
 };
 
@@ -933,8 +933,7 @@ var menu1_menu2 = {
     "ORG-AFF (Org-affiliation)": ["Employment", "Founder", "Ownership", "Student-Alum", "Sports-Affiliation", "Investor-Shareholder", "Membership"],
     "PART-WHOLE": ["Artifact", "Geographical", "Subsidiary"],
     "PER-SOC (person-social)": ["Business", "Family", "Lasting-Personal"],
-    "PHYS (physical)": ["Located", "Near"],
-    "Coreference": ["Coref"]
+    "PHYS (physical)": ["Located", "Near"]
 };
 
 var menu2_menu3 = {
@@ -999,7 +998,8 @@ var entity_rgb = {
     "Fac": { "R": 204, "G": 0, "B": 204 },
     "Veh": { "R": 204, "G": 0, "B": 102 },
     "Wea": { "R": 204, "G": 102, "B": 0 },
-    "Gpe": { "R": 255, "G": 51, "B": 0 }
+    "Gpe": { "R": 255, "G": 51, "B": 0 },
+    "Unk": { "R": 255, "G": 0, "B": 51 }
 }
 
 var relation_rgb = {
@@ -1021,8 +1021,7 @@ var relation_rgb = {
     "Family": { "R": 51, "G": 204, "B": 51 },
     "Lasting-Personal": { "R": 153, "G": 255, "B": 51 },
     "Located": { "R": 255, "G": 255, "B": 0 },
-    "Near": { "R": 255, "G": 153, "B": 51 },
-    "Coref": { "R": 255, "G": 80, "B": 80 }
+    "Near": { "R": 255, "G": 153, "B": 51 }
 }
 
 var event_rgb = {
