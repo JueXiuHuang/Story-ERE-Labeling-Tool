@@ -914,7 +914,7 @@ function click_En(){
 
 var ERE_menu1 = {
     "Entity": ["Per", "Org", "Loc", "Fac", "Veh", "Wea", "Gpe", "Unk"],
-    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)"],
+    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)", "Unk"],
     "Event": ["Life", "Movement", "Transaction", "Business", "Conflict", "Contact", "Personnel", "Justice"]
 };
 
@@ -933,7 +933,8 @@ var menu1_menu2 = {
     "ORG-AFF (Org-affiliation)": ["Employment", "Founder", "Ownership", "Student-Alum", "Sports-Affiliation", "Investor-Shareholder", "Membership"],
     "PART-WHOLE": ["Artifact", "Geographical", "Subsidiary"],
     "PER-SOC (person-social)": ["Business", "Family", "Lasting-Personal"],
-    "PHYS (physical)": ["Located", "Near"]
+    "PHYS (physical)": ["Located", "Near"],
+    "Unk": ["Unk"]
 };
 
 var menu2_menu3 = {
@@ -1021,7 +1022,8 @@ var relation_rgb = {
     "Family": { "R": 51, "G": 204, "B": 51 },
     "Lasting-Personal": { "R": 153, "G": 255, "B": 51 },
     "Located": { "R": 255, "G": 255, "B": 0 },
-    "Near": { "R": 255, "G": 153, "B": 51 }
+    "Near": { "R": 255, "G": 153, "B": 51 },
+    "Unk": {"R": 255, "G": 0, "B": 51 }
 }
 
 var event_rgb = {
