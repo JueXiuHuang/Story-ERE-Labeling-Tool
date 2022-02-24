@@ -914,7 +914,7 @@ function click_En(){
 
 var ERE_menu1 = {
     "Entity": ["Per", "Org", "Loc", "Fac", "Veh", "Wea", "Gpe", "Unk"],
-    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)", "Unk"],
+    "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)", "Coreference", "Unk"],
     "Event": ["Life", "Movement", "Transaction", "Business", "Conflict", "Contact", "Personnel", "Justice"]
 };
 
@@ -934,6 +934,7 @@ var menu1_menu2 = {
     "PART-WHOLE": ["Artifact", "Geographical", "Subsidiary"],
     "PER-SOC (person-social)": ["Business", "Family", "Lasting-Personal"],
     "PHYS (physical)": ["Located", "Near"],
+    "Coreference": ["Coref"],
     "Unk": ["Unk"]
 };
 
@@ -1023,6 +1024,7 @@ var relation_rgb = {
     "Lasting-Personal": { "R": 153, "G": 255, "B": 51 },
     "Located": { "R": 255, "G": 255, "B": 0 },
     "Near": { "R": 255, "G": 153, "B": 51 },
+    "Coref": { "R": 255, "G": 80, "B": 80 },
     "Unk": {"R": 255, "G": 0, "B": 51 }
 }
 
