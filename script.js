@@ -877,6 +877,8 @@ function login_or_register() {
     user_id = prompt("請輸入學號或一個屬於你的代號");
     console.log(user_id);
 
+    document.title = 'Story Tagging - ' + user_id
+
     let url = 'http://140.115.54.59:8000/LoginRegister/' + user_id;
     fetch(url, {
         method: 'POST',
@@ -937,7 +939,7 @@ var menu1_menu2 = {
     "Coreference": ["Coref"],
     "Unk": ["Unk"],
     "Process": ["Process"],
-    "State": ["State"],
+    "State": ["Emotion", "Thought"],
 };
 
 var menu2_menu3 = {
@@ -976,7 +978,8 @@ var menu2_menu3 = {
     "Phone-Write": ["Trigger_Word", "Entity", "Time", "Duration", "Place"],
     "Relation_Args": ["Arg1", "Arg2"],
     "Process": ["Trigger_word", "Entity", "Time", "Place"],
-    "State": ["Trigger_word", "Entity", "Time", "Place"],
+    "Emotion": ["Trigger_word", "Entity", "Time", "Place"],
+    "Thought": ["Trigger_word", "Entity", "Time", "Place", "Subject"],
 };
 
 var rgb_dict = {
@@ -1066,8 +1069,9 @@ var event_rgb = {
     "Appeal": { "R": 204, "G": 153, "B": 255 },
     "Meet": { "R": 153, "G": 204, "B": 255 },
     "Phone-Write": { "R": 102, "G": 204, "B": 255 },
-    "Process": { "R": 142, "G": 214, "B": 224 },
-    "State": { "R": 50, "G": 104, "B": 205 }
+    "Process": { "R": 96, "G": 92, "B": 132 },
+    "Emotion": { "R": 28, "G": 194, "B": 85 },
+    "Thought": { "R": 209, "G": 202, "B": 3 }
 }
 
 var new_rgb_dict = {
