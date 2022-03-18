@@ -581,7 +581,7 @@ function file_selected() {
     taggings = [];
     temp_tag = [];
     refresh_tag_display();
-    refresh_args_display();  
+    refresh_args_display();
 }
 
 
@@ -600,7 +600,7 @@ function file_searched(search_bar) {
     }
 }
 
-function click_Check(){
+function click_Check() {
     let val = file_selector.value;
     display_story(stories_json[val].file_name, stories_json[val].file_content, flag);
     get_tagged_tags(stories_json[val].file_name);
@@ -823,10 +823,10 @@ function display_story(f_title, f_cont, flag) {
     while (content.firstChild) {
         content.removeChild(content.firstChild);
     }
-    if (flag == 0){
+    if (flag == 0) {
         var tok_list = tokenization_ch(f_cont);
     }
-    else if(flag == 1){
+    else if (flag == 1) {
         var tok_list = tokenization_en(f_cont);
     }
 
@@ -860,11 +860,11 @@ function tokenization_en(string) {
     for (let tok = 0; tok < splited.length; tok++) {
         if (splited[tok].trim().length > 0) {
             ret_list.push(splited[tok].trim());
-            
-            if(splited[tok + 1] == ',' || splited[tok + 1] == '!' || splited[tok + 1] == '.' || splited[tok + 1] == '?' || splited[tok + 1] == '"'){
+
+            if (splited[tok + 1] == ',' || splited[tok + 1] == '!' || splited[tok + 1] == '.' || splited[tok + 1] == '?' || splited[tok + 1] == '"') {
                 continue;
             }
-            else{
+            else {
                 ret_list.push(" ");
             }
         }
@@ -892,7 +892,7 @@ function login_or_register() {
 login_or_register();
 get_story_data();
 
-function click_Ch(){
+function click_Ch() {
     flag = 0;
     var x = document.getElementById('story_ch');
     var y = document.getElementById('story_en');
@@ -902,7 +902,7 @@ function click_Ch(){
 
 }
 
-function click_En(){
+function click_En() {
     flag = 1;
 
     var x = document.getElementById('story_ch');
@@ -915,7 +915,7 @@ function click_En(){
 var ERE_menu1 = {
     "Entity": ["Per", "Org", "Loc", "Fac", "Veh", "Wea", "Gpe", "Unk"],
     "Relation": ["ART (artifact)", "GEN-AFF (Gen-affiliation)", "METONYMY", "ORG-AFF (Org-affiliation)", "PART-WHOLE", "PER-SOC (person-social)", "PHYS (physical)", "Coreference", "Unk"],
-    "Event": ["Life", "Movement", "Transaction", "Business", "Conflict", "Contact", "Personnel", "Justice"]
+    "Event": ["Life", "Movement", "Transaction", "Business", "Conflict", "Contact", "Personnel", "Justice", "Process", "State"]
 };
 
 var menu1_menu2 = {
@@ -935,7 +935,9 @@ var menu1_menu2 = {
     "PER-SOC (person-social)": ["Business", "Family", "Lasting-Personal"],
     "PHYS (physical)": ["Located", "Near"],
     "Coreference": ["Coref"],
-    "Unk": ["Unk"]
+    "Unk": ["Unk"],
+    "Process": ["Process"],
+    "State": ["State"],
 };
 
 var menu2_menu3 = {
@@ -972,7 +974,9 @@ var menu2_menu3 = {
     "Appeal": ["Trigger_Word", "Defendant", "Prosecutor", "Adjudicator", "Crime", "Time", "Place"],
     "Meet": ["Trigger_Word", "Entity", "Time", "Duration", "Place"],
     "Phone-Write": ["Trigger_Word", "Entity", "Time", "Duration", "Place"],
-    "Relation_Args": ["Arg1", "Arg2"]
+    "Relation_Args": ["Arg1", "Arg2"],
+    "Process": ["Trigger_word", "Entity", "Time", "Place"],
+    "State": ["Trigger_word", "Entity", "Time", "Place"],
 };
 
 var rgb_dict = {
@@ -1025,7 +1029,7 @@ var relation_rgb = {
     "Located": { "R": 255, "G": 255, "B": 0 },
     "Near": { "R": 255, "G": 153, "B": 51 },
     "Coref": { "R": 255, "G": 80, "B": 80 },
-    "Unk": {"R": 255, "G": 0, "B": 51 }
+    "Unk": { "R": 255, "G": 0, "B": 51 }
 }
 
 var event_rgb = {
@@ -1061,7 +1065,9 @@ var event_rgb = {
     "Pardon": { "R": 255, "G": 153, "B": 204 },
     "Appeal": { "R": 204, "G": 153, "B": 255 },
     "Meet": { "R": 153, "G": 204, "B": 255 },
-    "Phone-Write": { "R": 102, "G": 204, "B": 255 }
+    "Phone-Write": { "R": 102, "G": 204, "B": 255 },
+    "Process": { "R": 142, "G": 214, "B": 224 },
+    "State": { "R": 50, "G": 104, "B": 205 }
 }
 
 var new_rgb_dict = {
