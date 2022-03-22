@@ -977,9 +977,9 @@ var menu2_menu3 = {
     "Meet": ["Trigger_Word", "Entity", "Time", "Duration", "Place"],
     "Phone-Write": ["Trigger_Word", "Entity", "Time", "Duration", "Place"],
     "Relation_Args": ["Arg1", "Arg2"],
-    "Process": ["Trigger_word", "Entity", "Time", "Place"],
-    "Emotion": ["Trigger_word", "Entity", "Time", "Place"],
-    "Thought": ["Trigger_word", "Entity", "Time", "Place", "Subject"],
+    "Process": ["Trigger_word", "Agent", "Time", "Place", "Entity"],
+    "Emotion": ["Trigger_word", "Experiencer", "Time", "Place", "Stimulus"],
+    "Thought": ["Trigger_word", "Agent", "Time", "Place", "Content"],
 };
 
 var rgb_dict = {
